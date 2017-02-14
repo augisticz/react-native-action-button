@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, Animated, TouchableOpacity, Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
@@ -9,18 +9,7 @@ const alignItemsMap = {
 }
 
 export default class ActionButtonItem extends Component {
-  static get defaultProps() {
-    return {
-      active: true,
-    };
-  }
 
-  static get propTypes() {
-    return {
-      active: PropTypes.bool,
-    }
-  }
-  
   constructor(props) {
     super(props);
     this.state = {
@@ -34,14 +23,10 @@ export default class ActionButtonItem extends Component {
   }
 
   render() {
-    if (!this.props.active) {
-      return null;
-    }
-
     const translateXMap = {
-      center: this.props.parentSize/2,
+      center: 0,
       left: (this.props.parentSize - this.props.size) / 2 - 8,
-      right: this.props.parentSize + 12 - ((this.props.parentSize - this.props.size) / 2),
+      right: -(this.props.parentSize - this.props.size) / 2 + 8,
     }
 
     const translateX = translateXMap[this.props.position];
@@ -73,6 +58,7 @@ export default class ActionButtonItem extends Component {
         ]}
       >
         <TouchableOpacity
+          style={{ flex:1 }}
           activeOpacity={this.props.activeOpacity || 0.85}
           onPress={this.props.onPress}
         >

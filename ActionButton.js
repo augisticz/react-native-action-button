@@ -38,6 +38,7 @@ export default class ActionButton extends Component {
 
   getActionButtonStyles() {
     const actionButtonStyles = [styles.actionBarItem, this.getButtonSize()];
+    if(!this.props.hideShadow) actionButtonStyles.push(styles.btnShadow);
     return actionButtonStyles;
   }
 
@@ -113,6 +114,11 @@ export default class ActionButton extends Component {
     const animatedViewStyle = [
       styles.btn,
       {
+        width: this.props.size,
+        height: this.props.size,
+        borderRadius: this.props.size / 2,
+        marginHorizontal: 8,
+        marginBottom: shadowHeight,
         backgroundColor: this.anim.interpolate({
           inputRange: [0, 1],
           outputRange: [this.props.buttonColor, buttonColorMax]
@@ -131,26 +137,19 @@ export default class ActionButton extends Component {
       },
     ];
 
-    const combinedStyle = {
-      width: this.props.size,
-      height: this.props.size,
-      borderRadius: this.props.size / 2,
-      marginBottom: shadowHeight,
-      backgroundColor: this.props.buttonColor
-    }
+    if(!this.props.hideShadow && Platform.OS === 'android') animatedViewStyle.push(styles.btnShadow);
 
-    const actionButtonStyles = [ this.getActionButtonStyles(), combinedStyle, animatedViewStyle ]
-    const shadowStyles = [styles.btnShadow, combinedStyle]
     return (
-      <View style={[{ marginHorizontal: 8 }, !this.props.hideShadow && shadowStyles]}>
+      <View style={this.getActionButtonStyles()}>
         <TouchableOpacity
-            activeOpacity={0.85}
-            onLongPress={this.props.onLongPress}
-            onPress={() => {
-              this.props.onPress()
-              if (this.props.children) this.animateButton()
-            }}>
-          <Animated.View style={ actionButtonStyles }>
+          activeOpacity={0.85}
+          onLongPress={this.props.onLongPress}
+          onPress={() => {
+            this.props.onPress()
+            if (this.props.children) this.animateButton()
+          }}>
+          <Animated.View
+            style={animatedViewStyle}>
             {this._renderButtonIcon()}
           </Animated.View>
         </TouchableOpacity>
@@ -286,7 +285,7 @@ ActionButton.defaultProps = {
   bgColor: 'transparent',
   buttonColor: 'rgba(0,0,0,1)',
   buttonTextColor: 'rgba(255,255,255,1)',
-  spacing: 20,
+  spacing: 10,
   outRangeScale: 1,
   autoInactive: true,
   onPress: () => {},
@@ -295,7 +294,7 @@ ActionButton.defaultProps = {
   position: 'right',
   offsetX: 30,
   offsetY: 30,
-  size: 56,
+  size: 43,
   verticalOrientation: 'up',
   backgroundTappable: false,
 };
@@ -303,9 +302,9 @@ ActionButton.defaultProps = {
 const styles = StyleSheet.create({
   overlay: {
     position: 'absolute',
-    bottom: 0,
+    bottom: -19,
     left: 0,
-    right: 0,
+    right: -5,
     top: 0,
     backgroundColor: 'transparent',
   },
@@ -317,7 +316,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   btnText: {
     marginTop: -4,
