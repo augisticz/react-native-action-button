@@ -330,8 +330,8 @@ const styles = StyleSheet.create({
       width: 0, height: 3,
     },
     shadowColor: '#323232',
-    shadowRadius: 4,
-    elevation: 8,
+    shadowRadius: 8,
+    elevation: 2,
   },
   actionsVertical: {
     flex: 1,
