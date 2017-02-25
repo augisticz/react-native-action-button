@@ -8,7 +8,7 @@ const alignItemsMap = {
   "right" : "flex-end"
 }
 
-const shadowHeight = 12;
+const shadowHeight = 3;
 
 export default class ActionButton extends Component {
 
@@ -302,7 +302,7 @@ ActionButton.defaultProps = {
 const styles = StyleSheet.create({
   overlay: {
     position: 'absolute',
-    bottom: -19,
+    bottom: -13,
     left: 0,
     right: -5,
     top: 0,
@@ -327,9 +327,9 @@ const styles = StyleSheet.create({
   btnShadow: {
     shadowOpacity: 0.3,
     shadowOffset: {
-      width: 0, height: 8,
+      width: 0, height: 3,
     },
-    shadowColor: '#000',
+    shadowColor: '#323232',
     shadowRadius: 4,
     elevation: 8,
   },

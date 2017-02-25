@@ -11,9 +11,30 @@
         "type": "tag"
       },
       "D:\\OneSpec"
+    ],
+    [
+      {
+        "raw": "react-native-action-button@github:augisticz/react-native-action-button",
+        "scope": null,
+        "escapedName": "react-native-action-button",
+        "name": "react-native-action-button",
+        "rawSpec": "github:augisticz/react-native-action-button",
+        "spec": "github:augisticz/react-native-action-button",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:augisticz/react-native-action-button.git",
+          "sshUrl": "git+ssh://git@github.com/augisticz/react-native-action-button.git",
+          "httpsUrl": "git+https://github.com/augisticz/react-native-action-button.git",
+          "gitUrl": "git://github.com/augisticz/react-native-action-button.git",
+          "shortcut": "github:augisticz/react-native-action-button",
+          "directUrl": "https://raw.githubusercontent.com/augisticz/react-native-action-button/master/package.json"
+        }
+      },
+      "/Users/applicationdd/workspace/ignite/onespec"
     ]
   ],
-  "_from": "react-native-action-button@latest",
+  "_from": "augisticz/react-native-action-button",
   "_id": "react-native-action-button@2.0.16",
   "_inCache": true,
   "_installable": true,
@@ -30,23 +51,31 @@
   "_npmVersion": "3.10.8",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "react-native-action-button",
+    "raw": "react-native-action-button@github:augisticz/react-native-action-button",
     "scope": null,
     "escapedName": "react-native-action-button",
     "name": "react-native-action-button",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "github:augisticz/react-native-action-button",
+    "spec": "github:augisticz/react-native-action-button",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:augisticz/react-native-action-button.git",
+      "sshUrl": "git+ssh://git@github.com/augisticz/react-native-action-button.git",
+      "httpsUrl": "git+https://github.com/augisticz/react-native-action-button.git",
+      "gitUrl": "git://github.com/augisticz/react-native-action-button.git",
+      "shortcut": "github:augisticz/react-native-action-button",
+      "directUrl": "https://raw.githubusercontent.com/augisticz/react-native-action-button/master/package.json"
+    }
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/react-native-action-button/-/react-native-action-button-2.0.16.tgz",
-  "_shasum": "507991a5e1041b19ede9bb2c14f55f59bc05f51a",
+  "_resolved": "git+https://github.com/augisticz/react-native-action-button.git#e8c524e762d62408e816c4e825034eac6d901a3d",
+  "_shasum": "369ec64608046d5da9b77809435749bf44ac4491",
   "_shrinkwrap": null,
-  "_spec": "react-native-action-button",
-  "_where": "D:\\OneSpec",
+  "_spec": "react-native-action-button@github:augisticz/react-native-action-button",
+  "_where": "/Users/applicationdd/workspace/ignite/onespec",
   "author": {
     "name": "Yousef Kamawall"
   },
