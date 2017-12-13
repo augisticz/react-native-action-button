@@ -1,5 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-import { StyleSheet, Text, View, Animated, TouchableOpacity, Platform } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  Animated, 
+  TouchableOpacity, 
+  Platform,
+  Dimensions
+} from 'react-native';
+var { height } = Dimensions.get('window');
 import ActionButtonItem from './ActionButtonItem';
 
 const alignItemsMap = {
@@ -302,7 +311,7 @@ ActionButton.defaultProps = {
 const styles = StyleSheet.create({
   overlay: {
     position: 'absolute',
-    bottom: -13,
+    bottom: (height/100)*3,
     left: 0,
     right: -5,
     top: 0,
